@@ -1,0 +1,195 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charset="utf-8"/><meta name="keywords" content="@playform/document"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>vscode-dtdl</title><meta name="description" content="Documentation for vscode-dtdl"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><link rel="stylesheet" href="assets/custom.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">vscode-dtdl</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h2>vscode-dtdl</h2></div><div class="tsd-panel tsd-typography"><a id="md:dtdl-editor-for-visual-studio-code" class="tsd-anchor"></a><h1 class="tsd-anchor-link">DTDL Editor for Visual Studio Code<a href="#md:dtdl-editor-for-visual-studio-code" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p>🎉 <strong>Exciting Update: Our VSCode extension now offers expanded DTDL v3
+support!</strong></p>
+<p>We are incredibly delighted to announce the latest update to our VSCode
+extension. Not only does our enhanced release now fully support the DTDL V3
+context, but it also boasts improved Intellisense for V3 language extensions.</p>
+<p>This comprehensive support includes crucial features such as historization,
+overriding, annotations, and quantitativeTypes, making our product more robust
+and versatile for your diverse developing needs.</p>
+<p>Don't wait any longer! Dive in and discover the expanded functionality that our
+updated VSCode extension has to offer. Stay tuned to our repository for upcoming
+updates. We always welcome your invaluable insights and feedback for continued
+improvements.</p>
+<p>Happy coding to all!🚀</p>
+<a id="md:overview" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Overview<a href="#md:overview" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>The <a href="https://aka.ms/DTDL">Digital Twin Definition Language</a> (DTDL) is a language
+for describing models for Plug and Play devices, device digital twins, and
+logical digital twins. Broadly, modeling enables IoT solutions to provision,
+use, and configure digital twins of all kinds from multiple sources in a single
+solution. Using DTDL to describe any digital twin’s abilities enables the IoT
+platform and IoT solutions to leverage the semantics of each digital twin.</p>
+<p>With the
+<a href="https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-dtdl">DTDL extension for Visual Studio Code</a>
+, you can read and write documents using DTDL more efficiently taking full
+advantage of the following key features:</p>
+<ul>
+<li>Create interfaces from the command palette with predefined or customized
+templates.</li>
+<li>Intellisense to help you with the language syntax (including
+auto-completion).</li>
+<li>Use predefined code snippets to develop DTDL efficiently.</li>
+<li>Syntax validation.</li>
+</ul>
+<a id="md:get-started" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Get Started<a href="#md:get-started" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><a id="md:create-interface" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Create Interface<a href="#md:create-interface" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>You could use the command palette to create interface from predefined or
+customized templates.</p>
+<ul>
+<li>In Visual Studio Code, select <strong>View &gt; Command Palette</strong> to open the VS Code
+command palette.</li>
+<li>In the command palette, enter and run the command <strong>DTDL: Create
+Interface</strong>.</li>
+<li>Follow the instruction to assign the interface name.</li>
+<li>If there are multiple templates existing, choose a template you need.
+Otherwise, the extension will the basic template as default.</li>
+<li>A JSON file will be created in the current folder. The file name is based on
+the interface name you assigned.</li>
+<li>The @id is the path component of the
+<a href="https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTMI/README.md">Digital Twin Model Identifier</a>
+(DTMI). You should modify the @id following the DTMI rule to uniquely
+identify the device model.</li>
+</ul>
+<a id="md:intellisense-and-syntax-validation" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Intellisense and Syntax validation<a href="#md:intellisense-and-syntax-validation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>This extension could help you with the language syntax (including
+auto-completion) and also validate the syntax with <a href="https://aka.ms/dtdl">DTDL</a>.</p>
+<a id="md:use-predefined-code-snippets" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Use Predefined Code Snippets<a href="#md:use-predefined-code-snippets" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Besides the basic auto completion, this extension also provides some predefined
+code snippets to help you develop DTDL efficiently.</p>
+<table>
+<thead>
+<tr>
+<th>Code Snippet</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dtt</code></td>
+<td>Code snippet of telemetry</td>
+</tr>
+<tr>
+<td><code>dtp</code></td>
+<td>Code snippet of property</td>
+</tr>
+<tr>
+<td><code>dtc</code></td>
+<td>Code snippet of command</td>
+</tr>
+</tbody>
+</table>
+<a id="md:create-your-own-template" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Create Your Own Template<a href="#md:create-your-own-template" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><a id="md:prepare-your-template-file" class="tsd-anchor"></a><h4 class="tsd-anchor-link">Prepare your template file<a href="#md:prepare-your-template-file" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h4><p>You could use any DTDL file as a template to develop efficiently. Meanwhile, you
+could also use these predefined tags to make your template more flexible.</p>
+<ul>
+<li><strong>{modelId}</strong>: The extention will replace this tag with
+<em>dtmi:com:example:interface_name;1</em> when creating a new DTDL from a
+template. For example, if you assigned the interface name as &quot;test&quot;, the
+result will be dtmi:com:example:test;1.</li>
+<li><strong>{modelName}</strong>: The extension will replace this tag with the interface name
+when creating a new DTDL from a template.</li>
+</ul>
+<a id="md:import-your-template-file" class="tsd-anchor"></a><h4 class="tsd-anchor-link">Import your template file<a href="#md:import-your-template-file" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h4><ul>
+<li>Go to
+[<a href="https://code.visualstudio.com/docs/editor/extension-gallery#_where-are-extensions-installed">extension installation location</a>]/vsciot-vscode.vscode-dtdl-[extension
+release version]/templates</li>
+<li>Store your template into this folder as a JSON file. Keep the file name
+short and meaningful, because the extension will use the file name as
+template name.</li>
+</ul>
+<a id="md:create-your-own-code-snippets" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Create Your Own Code Snippets<a href="#md:create-your-own-code-snippets" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>If you would like to create customized code snippets for VS Code, you could
+follow
+<a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">Snippets in Visual Studio Code</a></p>
+<a id="md:contribute-your-templates-and-code-snippets-to-the-community" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Contribute Your Templates and Code Snippets to the Community<a href="#md:contribute-your-templates-and-code-snippets-to-the-community" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>You could also contribute your templates and code snippets to the
+<a href="https://github.com/microsoft/vscode-dtdl">DTDL repository</a>.</p>
+<ul>
+<li>Uploading the new templates to <strong>templates</strong> folder.</li>
+<li>Modifying and adding new code snippets to <strong>snippets/snippets.json</strong> file.</li>
+</ul>
+<p>Once the pull request is approved, your templates and code snippets will be
+released with next release of DTDL extension.</p>
+<a id="md:commands" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Commands<a href="#md:commands" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DTDL: Create Interface...</code></td>
+<td>Create new interface from predefined or customized templates.</td>
+</tr>
+</tbody>
+</table>
+<a id="md:trouble-shooting" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Trouble Shooting<a href="#md:trouble-shooting" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><a id="md:error-when-creating-the-interface" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Error when creating the interface<a href="#md:error-when-creating-the-interface" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>As default, the extension will get the available templates from
+<em>[<a href="https://code.visualstudio.com/docs/editor/extension-gallery#_where-are-extensions-installed">extension installation location</a>]/vsciot-vscode.vscode-dtdl-[extension
+release version]/templates</em>. But if you delete this folder or all templates
+files in this folder, you will have an error when creating the interface. In
+order to fix this issue, you could copy the templates from
+<a href="https://github.com/microsoft/vscode-dtdl">DTDL repository</a> to your local
+templates folder manually.</p>
+<a id="md:contributing" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Contributing<a href="#md:contributing" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>This project welcomes contributions and suggestions. Most contributions require
+you to agree to a Contributor License Agreement (CLA) declaring that you have
+the right to, and actually do, grant us the rights to use your contribution. For
+details, visit <a href="https://cla.opensource.microsoft.com">https://cla.opensource.microsoft.com</a>.</p>
+<p>When you submit a pull request, a CLA bot will automatically determine whether
+you need to provide a CLA and decorate the PR appropriately (e.g., status check,
+comment). Simply follow the instructions provided by the bot. You will only need
+to do this once across all repos using our CLA.</p>
+<p>This project has adopted the
+<a href="https://opensource.microsoft.com/codeofconduct/">Microsoft Open Source Code of Conduct</a>.
+For more information see the
+<a href="https://opensource.microsoft.com/codeofconduct/faq/">Code of Conduct FAQ</a> or
+contact <a href="mailto:opencode@microsoft.com">opencode@microsoft.com</a> with any
+additional questions or comments.</p>
+<a id="md:code-of-conduct" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Code of Conduct<a href="#md:code-of-conduct" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>This project has adopted the
+<a href="https://opensource.microsoft.com/codeofconduct">Microsoft Open Source Code of Conduct</a>.
+For more information please see the
+<a href="https://opensource.microsoft.com/codeofconduct/faq/#howadopt">Code of Conduct FAQ</a>
+or contact <a href="mailto:opencode@microsoft.com">opencode@microsoft.com</a> with any additional questions or comments.</p>
+<a id="md:contact-us" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Contact Us<a href="#md:contact-us" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>If you would like to help to build the best IoT experience with IoT Plug and
+Play, you can reach us directly at
+<a href="https://gitter.im/Microsoft/vscode-azure-digital-twins">Gitter</a>.</p>
+<a id="md:telemetry" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Telemetry<a href="#md:telemetry" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>VS Code collects usage data and sends it to Microsoft to help improve our
+products and services. Read our
+<a href="https://go.microsoft.com/fwlink/?LinkID=528096&amp;clcid=0x409">privacy statement</a>
+to learn more. If you don’t wish to send usage data to Microsoft, you can set
+the <code>telemetry.enableTelemetry</code> setting to <code>false</code>. Learn more in our
+<a href="https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-telemetry-reporting">FAQ</a>.</p>
+<a id="md:security" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Security<a href="#md:security" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Microsoft takes the security of our software products and services seriously,
+which includes all source code repositories managed through our GitHub
+organizations, which include <a href="https://github.com/Microsoft">Microsoft</a>,
+<a href="https://github.com/Azure">Azure</a>, <a href="https://github.com/dotnet">DotNet</a>,
+<a href="https://github.com/aspnet">AspNet</a>, <a href="https://github.com/xamarin">Xamarin</a>, and
+<a href="https://opensource.microsoft.com/">our GitHub organizations</a>.</p>
+<p>If you believe you have found a security vulnerability in any Microsoft-owned
+repository that meets Microsoft's
+<a href="https://docs.microsoft.com/en-us/previous-versions/tn-archive/cc751383(v=technet.10)">Microsoft's definition of a security vulnerability</a>,
+please report it to us as described below.</p>
+<a id="md:reporting-security-issues" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Reporting Security Issues<a href="#md:reporting-security-issues" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p><strong>Please do not report security vulnerabilities through public GitHub issues.</strong></p>
+<p>Instead, please report them to the Microsoft Security Response Center (MSRC) at
+<a href="https://msrc.microsoft.com/create-report">https://msrc.microsoft.com/create-report</a>.</p>
+<p>If you prefer to submit without logging in, send email to
+<a href="mailto:secure@microsoft.com">secure@microsoft.com</a>. If possible, encrypt your
+message with our PGP key; please download it from the the
+<a href="https://www.microsoft.com/en-us/msrc/pgp-key-msrc">Microsoft Security Response Center PGP Key page</a>.</p>
+<p>You should receive a response within 24 hours. If for some reason you do not,
+please follow up via email to ensure we received your original message.
+Additional information can be found at
+<a href="https://www.microsoft.com/msrc">microsoft.com/msrc</a>.</p>
+<p>Please include the requested information listed below (as much as you can
+provide) to help us better understand the nature and scope of the possible
+issue:</p>
+<ul>
+<li>Type of issue (e.g. buffer overflow, SQL injection, cross-site scripting,
+etc.)</li>
+<li>Full paths of source file(s) related to the manifestation of the issue</li>
+<li>The location of the affected source code (tag/branch/commit or direct URL)</li>
+<li>Any special configuration required to reproduce the issue</li>
+<li>Step-by-step instructions to reproduce the issue</li>
+<li>Proof-of-concept or exploit code (if possible)</li>
+<li>Impact of the issue, including how an attacker might exploit the issue</li>
+</ul>
+<p>This information will help us triage your report more quickly.</p>
+<p>If you are reporting for a bug bounty, more complete reports can contribute to a
+higher bounty award. Please visit our
+<a href="https://microsoft.com/msrc/bounty">Microsoft Bug Bounty Program</a> page for more
+details about our active programs.</p>
+<a id="md:preferred-languages" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Preferred Languages<a href="#md:preferred-languages" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>We prefer all communications to be in English.</p>
+<a id="md:policy" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Policy<a href="#md:policy" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Microsoft follows the principle of
+<a href="https://www.microsoft.com/en-us/msrc/cvd">Coordinated Vulnerability Disclosure</a>.</p>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:dtdl-editor-for-visual-studio-code"><span>DTDL <wbr/>Editor for <wbr/>Visual <wbr/>Studio <wbr/>Code</span></a><ul><li><a href="#md:overview"><span>Overview</span></a></li><li><a href="#md:get-started"><span>Get <wbr/>Started</span></a></li><li><ul><li><a href="#md:create-interface"><span>Create <wbr/>Interface</span></a></li><li><a href="#md:intellisense-and-syntax-validation"><span>Intellisense and <wbr/>Syntax validation</span></a></li><li><a href="#md:use-predefined-code-snippets"><span>Use <wbr/>Predefined <wbr/>Code <wbr/>Snippets</span></a></li><li><a href="#md:create-your-own-template"><span>Create <wbr/>Your <wbr/>Own <wbr/>Template</span></a></li><li><ul><li><a href="#md:prepare-your-template-file"><span>Prepare your template file</span></a></li><li><a href="#md:import-your-template-file"><span>Import your template file</span></a></li></ul></li><li><a href="#md:create-your-own-code-snippets"><span>Create <wbr/>Your <wbr/>Own <wbr/>Code <wbr/>Snippets</span></a></li><li><a href="#md:contribute-your-templates-and-code-snippets-to-the-community"><span>Contribute <wbr/>Your <wbr/>Templates and <wbr/>Code <wbr/>Snippets to the <wbr/>Community</span></a></li></ul></li><li><a href="#md:commands"><span>Commands</span></a></li><li><a href="#md:trouble-shooting"><span>Trouble <wbr/>Shooting</span></a></li><li><ul><li><a href="#md:error-when-creating-the-interface"><span>Error when creating the interface</span></a></li></ul></li><li><a href="#md:contributing"><span>Contributing</span></a></li><li><a href="#md:code-of-conduct"><span>Code of <wbr/>Conduct</span></a></li><li><a href="#md:contact-us"><span>Contact <wbr/>Us</span></a></li><li><a href="#md:telemetry"><span>Telemetry</span></a></li><li><a href="#md:security"><span>Security</span></a></li><li><a href="#md:reporting-security-issues"><span>Reporting <wbr/>Security <wbr/>Issues</span></a></li><li><a href="#md:preferred-languages"><span>Preferred <wbr/>Languages</span></a></li><li><a href="#md:policy"><span>Policy</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>vscode-dtdl</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>
