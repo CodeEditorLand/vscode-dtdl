@@ -1,0 +1,11 @@
+steps:
+  # static checking
+  - script: |
+      npm run eslint
+    displayName: 'Run ESLint Checks'
+  # Run tests
+  - script: |
+      npm run test --silent
+    displayName: 'Run Tests'
+    env:
+      DISPLAY: ':99.0'
