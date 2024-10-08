@@ -5,6 +5,6 @@
  * Event type for telemetry
  */
 export enum EventType {
-	CreateInterface = "vscode-dtdl.createInterface",
-	OpenModelFile = "openModelFile",
+  CreateInterface = "vscode-dtdl.createInterface",
+  OpenModelFile = "openModelFile"
 }
