@@ -48,13 +48,19 @@ export class UI {
 		switch (type) {
 			case MessageType.Info:
 				vscode.window.showInformationMessage(message);
+
 				break;
+
 			case MessageType.Warn:
 				vscode.window.showWarningMessage(message);
+
 				break;
+
 			case MessageType.Error:
 				vscode.window.showErrorMessage(message);
+
 				break;
+
 			default:
 		}
 	}
@@ -73,9 +79,11 @@ export class UI {
 		}
 		// select folder or browse
 		let items: vscode.QuickPickItem[] = [];
+
 		if (workspaceFolders) {
 			items = workspaceFolders.map((folder) => {
 				const fsPath: string = folder.uri.fsPath;
+
 				return {
 					label: path.basename(fsPath),
 					description: fsPath,
@@ -86,10 +94,12 @@ export class UI {
 			label: UIConstants.BROWSE_LABEL,
 			description: Constants.EMPTY_STRING,
 		});
+
 		const selected: vscode.QuickPickItem = await UI.showQuickPick(
 			label,
 			items,
 		);
+
 		return selected.description || (await UI.showOpenDialog(label));
 	}
 
@@ -106,8 +116,10 @@ export class UI {
 			folder,
 			Constants.TEMPLATE_FILE_GLOB,
 		);
+
 		if (!files.length) {
 			const message = `${UIConstants.TEMPLATES_NOT_FOUND_MSG} ${folder}`;
+
 			throw new Error(message);
 		}
 		if (files.length === 1) {
@@ -118,10 +130,12 @@ export class UI {
 				label: file,
 			};
 		});
+
 		const selected: vscode.QuickPickItem = await UI.showQuickPick(
 			label,
 			items,
 		);
+
 		return selected.label;
 	}
 
@@ -137,11 +151,13 @@ export class UI {
 		folder: string,
 	): Promise<string> {
 		const placeHolder = `${type} name`;
+
 		const validateInput = async (
 			name: string,
 		): Promise<string | undefined> => {
 			return await Utility.validateModelName(name, type, folder);
 		};
+
 		return await UI.showInputBox(label, placeHolder, validateInput);
 	}
 
@@ -158,8 +174,10 @@ export class UI {
 			placeHolder: label,
 			ignoreFocusOut: true,
 		};
+
 		const selected: vscode.QuickPickItem | undefined =
 			await vscode.window.showQuickPick(items, options);
+
 		if (!selected) {
 			throw new UserCancelledError(label);
 		}
@@ -182,8 +200,10 @@ export class UI {
 			canSelectFolders: true,
 			canSelectMany: false,
 		};
+
 		const selected: vscode.Uri[] | undefined =
 			await vscode.window.showOpenDialog(options);
+
 		if (!selected || !selected.length) {
 			throw new UserCancelledError(label);
 		}
@@ -214,8 +234,10 @@ export class UI {
 			value,
 			ignoreFocusOut,
 		};
+
 		const input: string | undefined =
 			await vscode.window.showInputBox(options);
+
 		if (!input) {
 			throw new UserCancelledError(label);
 		}

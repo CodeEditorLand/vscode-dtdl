@@ -30,7 +30,9 @@ export class Utility {
 			templatePath,
 			Constants.UTF8,
 		);
+
 		const content: string = Utility.replaceAll(template, replacement);
+
 		const jsonContent = JSON.parse(content);
 		await fs.writeJson(filePath, jsonContent, {
 			spaces: Constants.JSON_SPACE,
@@ -56,6 +58,7 @@ export class Utility {
 			return `Name can only contain ${Constants.MODEL_NAME_REGEX_DESCRIPTION}`;
 		}
 		const filename: string = DeviceModelManager.generateModelFileName(name);
+
 		if (await fs.pathExists(path.join(folder, filename))) {
 			return `${type} ${name} already exists in folder ${folder}`;
 		}
@@ -80,9 +83,12 @@ export class Utility {
 		replacement: Map<string, string>,
 	): string {
 		const keys = Array.from(replacement.keys());
+
 		const pattern = new RegExp(keys.join("|"), "g");
+
 		return str.replace(pattern, (matched) => {
 			const value: string | undefined = replacement.get(matched);
+
 			return value || matched;
 		});
 	}

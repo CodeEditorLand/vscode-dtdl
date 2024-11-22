@@ -9,6 +9,7 @@ import { Constants } from "./constants";
 export class UserCancelledError extends Error {
 	constructor(operation?: string) {
 		const message = operation ? ` [${operation}]` : Constants.EMPTY_STRING;
+
 		super("User cancelled the operation" + message);
 		this.name = "UserCancelledError";
 	}

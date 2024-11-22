@@ -37,15 +37,18 @@ function initCommand(
 		vscode.commands.registerCommand(event, async (...args: any[]) => {
 			const telemetryContext: TelemetryContext =
 				TelemetryContext.startNew();
+
 			try {
 				return await callback(...args);
 			} catch (err) {
 				const error = err as any;
 				telemetryContext.setError(error);
+
 				if (error instanceof UserCancelledError) {
 					outputChannel.warn(error.message);
 				} else {
 					UI.showNotification(MessageType.Error, error.message);
+
 					if (error instanceof ProcessError) {
 						const message = `${error.message}\n${error.stack}`;
 						outputChannel.error(message, error.component);
@@ -64,7 +67,9 @@ function initCommand(
 
 export function activate(context: vscode.ExtensionContext): void {
 	const outputChannel = new ColorizedChannel(Constants.CHANNEL_NAME);
+
 	const telemetryClient = new TelemetryClient(context);
+
 	const deviceModelManager = new DeviceModelManager(context, outputChannel);
 
 	telemetryClient.sendEvent(Constants.EXTENSION_ACTIVATED_MSG);
@@ -75,6 +80,7 @@ export function activate(context: vscode.ExtensionContext): void {
 	const serverPath = context.asAbsolutePath(
 		Constants.DTDL_LANGUAGE_SERVER_RELATIVE_PATH,
 	);
+
 	const debugOptions = { execArgv: ["--nolazy", "--inspect=6009"] };
 
 	const serverOptions: ServerOptions = {

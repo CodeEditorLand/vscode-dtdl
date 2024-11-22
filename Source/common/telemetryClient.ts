@@ -35,6 +35,7 @@ export class TelemetryClient {
 		const userDomain: string = process.env.USERDNSDOMAIN
 			? process.env.USERDNSDOMAIN.toLowerCase()
 			: Constants.EMPTY_STRING;
+
 		return userDomain.endsWith("microsoft.com");
 	}
 
@@ -43,10 +44,12 @@ export class TelemetryClient {
 
 	private client: TelemetryReporter | undefined;
 	private isInternal = false;
+
 	constructor(context: vscode.ExtensionContext) {
 		const packageJSON = JSON.parse(
 			fs.readFileSync(context.asAbsolutePath("./package.json"), "utf8"),
 		);
+
 		if (!packageJSON || !TelemetryClient.isValidPackageJSON(packageJSON)) {
 			return;
 		}
@@ -78,6 +81,7 @@ export class TelemetryClient {
 				[TelemetryClient.IS_INTERNAL]: this.isInternal.toString(),
 			};
 			this.client.sendTelemetryEvent(eventName, properties);
+
 			return;
 		}
 

@@ -40,6 +40,7 @@ export class DeviceModelManager {
 	}
 
 	private readonly component: string;
+
 	constructor(
 		private readonly context: vscode.ExtensionContext,
 		private readonly outputChannel: ColorizedChannel,
@@ -55,22 +56,27 @@ export class DeviceModelManager {
 		const folder: string = await UI.selectRootFolder(
 			UIConstants.SELECT_ROOT_FOLDER_LABEL,
 		);
+
 		const name: string = await UI.inputModelName(
 			UIConstants.INPUT_MODEL_NAME_LABEL,
 			type,
 			folder,
 		);
+
 		const templateFolder: string = this.context.asAbsolutePath(
 			path.join(Constants.TEMPLATE_FOLDER),
 		);
+
 		const template: string = await UI.selectTemplateFile(
 			UIConstants.SELECT_TEMPLATE_FILE_LABEL,
 			templateFolder,
 		);
+
 		const operation = `Create ${type} "${name}" in folder ${folder} by template "${template}"`;
 		this.outputChannel.start(operation, this.component);
 
 		let filePath: string;
+
 		try {
 			filePath = await this.doCreateModel(
 				folder,
@@ -101,10 +107,12 @@ export class DeviceModelManager {
 		templatePath: string,
 	): Promise<string> {
 		const modelId: string = DeviceModelManager.generateModelId(name);
+
 		const filePath: string = path.join(
 			folder,
 			DeviceModelManager.generateModelFileName(name),
 		);
+
 		const replacement = new Map<string, string>();
 		replacement.set(Constants.MODEL_ID_PLACEHOLDER, modelId);
 		replacement.set(Constants.MODEL_NAME_PLACEHOLDER, name);
@@ -113,6 +121,7 @@ export class DeviceModelManager {
 			filePath,
 			replacement,
 		);
+
 		return filePath;
 	}
 }
