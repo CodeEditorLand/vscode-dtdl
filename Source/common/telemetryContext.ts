@@ -24,12 +24,16 @@ export class TelemetryContext {
 	}
 
 	public properties: { [key: string]: string };
+
 	public measurements: { [key: string]: number };
 
 	private start: number;
+
 	private constructor() {
 		this.start = Date.now();
+
 		this.properties = {};
+
 		this.measurements = {};
 	}
 
@@ -46,7 +50,9 @@ export class TelemetryContext {
 			error instanceof UserCancelledError
 				? OperationResult.Cancel
 				: OperationResult.Fail;
+
 		this.properties.errorType = error.name;
+
 		this.properties.errorMessage = error.message;
 	}
 
@@ -57,6 +63,7 @@ export class TelemetryContext {
 		if (!this.properties.result) {
 			this.properties.result = OperationResult.Success;
 		}
+
 		this.measurements.duration = (Date.now() - this.start) / 1000;
 	}
 }

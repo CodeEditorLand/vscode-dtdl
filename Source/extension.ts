@@ -42,6 +42,7 @@ function initCommand(
 				return await callback(...args);
 			} catch (err) {
 				const error = err as any;
+
 				telemetryContext.setError(error);
 
 				if (error instanceof UserCancelledError) {
@@ -51,6 +52,7 @@ function initCommand(
 
 					if (error instanceof ProcessError) {
 						const message = `${error.message}\n${error.stack}`;
+
 						outputChannel.error(message, error.component);
 					} else {
 						outputChannel.error(error.message);
@@ -58,7 +60,9 @@ function initCommand(
 				}
 			} finally {
 				telemetryContext.end();
+
 				telemetryClient.sendEvent(event, telemetryContext);
+
 				outputChannel.show();
 			}
 		}),
@@ -73,7 +77,9 @@ export function activate(context: vscode.ExtensionContext): void {
 	const deviceModelManager = new DeviceModelManager(context, outputChannel);
 
 	telemetryClient.sendEvent(Constants.EXTENSION_ACTIVATED_MSG);
+
 	context.subscriptions.push(outputChannel);
+
 	context.subscriptions.push(telemetryClient);
 
 	// Use local absolute path for debugging
@@ -107,8 +113,11 @@ export function activate(context: vscode.ExtensionContext): void {
 		client.onNotification("custom/onDidOpenModelFile", (version) => {
 			const telemetryContext: TelemetryContext =
 				TelemetryContext.startNew();
+
 			telemetryContext.properties.dtdlVersion = version;
+
 			telemetryContext.end();
+
 			telemetryClient.sendEvent(
 				EventType.OpenModelFile,
 				telemetryContext,
@@ -133,5 +142,6 @@ export function deactivate(): Thenable<void> | undefined {
 	if (!client) {
 		return undefined;
 	}
+
 	return client.stop();
 }

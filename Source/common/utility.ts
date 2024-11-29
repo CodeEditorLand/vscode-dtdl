@@ -34,6 +34,7 @@ export class Utility {
 		const content: string = Utility.replaceAll(template, replacement);
 
 		const jsonContent = JSON.parse(content);
+
 		await fs.writeJson(filePath, jsonContent, {
 			spaces: Constants.JSON_SPACE,
 			encoding: Constants.UTF8,
@@ -54,14 +55,17 @@ export class Utility {
 		if (!name || !name.trim()) {
 			return `Name ${Constants.NOT_EMPTY_MSG}`;
 		}
+
 		if (!Constants.MODEL_NAME_REGEX.test(name)) {
 			return `Name can only contain ${Constants.MODEL_NAME_REGEX_DESCRIPTION}`;
 		}
+
 		const filename: string = DeviceModelManager.generateModelFileName(name);
 
 		if (await fs.pathExists(path.join(folder, filename))) {
 			return `${type} ${name} already exists in folder ${folder}`;
 		}
+
 		return undefined;
 	}
 

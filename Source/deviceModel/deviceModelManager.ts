@@ -73,6 +73,7 @@ export class DeviceModelManager {
 		);
 
 		const operation = `Create ${type} "${name}" in folder ${folder} by template "${template}"`;
+
 		this.outputChannel.start(operation, this.component);
 
 		let filePath: string;
@@ -88,10 +89,12 @@ export class DeviceModelManager {
 		}
 
 		await UI.openAndShowTextDocument(filePath);
+
 		UI.showNotification(
 			MessageType.Info,
 			ColorizedChannel.formatMessage(operation),
 		);
+
 		this.outputChannel.end(operation, this.component);
 	}
 
@@ -114,8 +117,11 @@ export class DeviceModelManager {
 		);
 
 		const replacement = new Map<string, string>();
+
 		replacement.set(Constants.MODEL_ID_PLACEHOLDER, modelId);
+
 		replacement.set(Constants.MODEL_NAME_PLACEHOLDER, name);
+
 		await Utility.createFileFromTemplate(
 			templatePath,
 			filePath,

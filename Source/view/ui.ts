@@ -31,11 +31,13 @@ export class UI {
 		filePath: string,
 	): Promise<void> {
 		const folder: string = path.dirname(filePath);
+
 		await vscode.commands.executeCommand(
 			"vscode.openFolder",
 			vscode.Uri.file(folder),
 			false,
 		);
+
 		await vscode.window.showTextDocument(vscode.Uri.file(filePath));
 	}
 
@@ -90,6 +92,7 @@ export class UI {
 				};
 			});
 		}
+
 		items.push({
 			label: UIConstants.BROWSE_LABEL,
 			description: Constants.EMPTY_STRING,
@@ -122,9 +125,11 @@ export class UI {
 
 			throw new Error(message);
 		}
+
 		if (files.length === 1) {
 			return files[0];
 		}
+
 		const items: vscode.QuickPickItem[] = files.map((file) => {
 			return {
 				label: file,
@@ -181,6 +186,7 @@ export class UI {
 		if (!selected) {
 			throw new UserCancelledError(label);
 		}
+
 		return selected;
 	}
 
@@ -207,6 +213,7 @@ export class UI {
 		if (!selected || !selected.length) {
 			throw new UserCancelledError(label);
 		}
+
 		return selected[0].fsPath;
 	}
 
@@ -241,6 +248,7 @@ export class UI {
 		if (!input) {
 			throw new UserCancelledError(label);
 		}
+
 		return input;
 	}
 

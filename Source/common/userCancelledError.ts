@@ -11,6 +11,7 @@ export class UserCancelledError extends Error {
 		const message = operation ? ` [${operation}]` : Constants.EMPTY_STRING;
 
 		super("User cancelled the operation" + message);
+
 		this.name = "UserCancelledError";
 	}
 }

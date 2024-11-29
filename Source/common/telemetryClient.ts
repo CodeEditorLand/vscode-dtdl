@@ -40,9 +40,11 @@ export class TelemetryClient {
 	}
 
 	public extensionId: string = Constants.EMPTY_STRING;
+
 	public extensionVersion = "unknown";
 
 	private client: TelemetryReporter | undefined;
+
 	private isInternal = false;
 
 	constructor(context: vscode.ExtensionContext) {
@@ -53,14 +55,18 @@ export class TelemetryClient {
 		if (!packageJSON || !TelemetryClient.isValidPackageJSON(packageJSON)) {
 			return;
 		}
+
 		this.extensionId = `${packageJSON.publisher}.${packageJSON.name}`;
+
 		this.extensionVersion = packageJSON.version;
+
 		this.client = new TelemetryReporter(
 			this.extensionId,
 			this.extensionVersion,
 			packageJSON.aiKey,
 			true,
 		);
+
 		this.isInternal = TelemetryClient.isInternalUser();
 	}
 
@@ -76,10 +82,12 @@ export class TelemetryClient {
 		if (!this.client) {
 			return;
 		}
+
 		if (!telemetryContext) {
 			const properties = {
 				[TelemetryClient.IS_INTERNAL]: this.isInternal.toString(),
 			};
+
 			this.client.sendTelemetryEvent(eventName, properties);
 
 			return;
